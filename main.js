@@ -342,7 +342,41 @@ function acceptValue() {
     finalResult = studentPoint + studentMark + ageGrade;
 
     if (finalResult >= 180) {
-        alert("Congratulations you have been selected for 2023 Scholarship with total score of " + finalResult)
+
+        let myChart = document.getElementById("myChart").getContext("2d");
+
+            let scoreChart = new Chart (myChart, {
+                type: 'pie',
+                data: {
+                labels: ['grade', 'country', 'age'],
+                datasets: [{
+                label: 'My First dataset',
+                data: [studentPoint, studentMark, ageGrade],
+                backgroundColor:[
+                    'rgb(255, 99, 132, 0.2)',
+                    'rgb(54, 162, 235, 0.2)',
+                    'rgb(255, 206, 86, 0.2)'
+                ],
+
+                borderColor: [
+                    'rgb(255, 99, 132, 0.2)',
+                    'rgb(54, 162, 235, 0.2)',
+                    'rgb(255, 206, 86, 0.2)'
+                ],
+                borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y:{
+                        beginAtZero: true
+                    }
+                }
+            }
+        })
+
+        alert(            
+            "Congratulations you have been selected for 2023 Scholarship with total score of " + finalResult)
     }
     else {
         alert("You're not qualified for this scholarship, pls kindly apply another time as your score " + finalResult + " didn't meet up with the requirement") 
@@ -352,22 +386,23 @@ function acceptValue() {
 
     function exit() {
 
-        firstName.value = ""
-        emailForm.value = ""
-        gender.value = ""
-        countries.value = ""
-        lastName.value = ""
-        phoneNumber.value = ""
-        course.value = ""
-        dob.value = ""
-        description.value = ""
-        english1=""
+        firstName.value=""
+        emailForm.value=""
+        phoneNumber.value=""
+        gender.value=""
+        countries.value=""
+        lastName.value=""
+        course.value=""
+        dob.value=""
+        description.value=""
+        dobError.value=""
+        english1.value=""
         mathematics.value=""
         courses3.value=""
         courses4.value=""
         courses5.value=""
         courses6.value=""
+        courses7.value=""
+        courses8.value=""
+        agree.checked=""
     }
-
-
-
